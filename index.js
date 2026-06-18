@@ -467,3 +467,162 @@
 // console.log(set);
 
 //-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [4, 2, 1, 10, 6];
+// let result = [];
+// function Range(num1, num2) {
+//   const leftIndex = arr.indexOf(num1);
+//   const rightIndex = arr.lastIndexOf(num2);
+//   for (let i = leftIndex + 1; i < rightIndex; i++) {
+//     result.push(arr[i]);
+//   }
+//   return result;
+// }
+// console.log(Range(4, 6));
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [1, 2, 3, 4, 5, 6, 7, 7, 6, 8, 9, 10];
+// let result = [];
+// for (let i = 0; i < arr.length; i++) {
+//   if (!result.includes(arr[i])) {
+//     result.push(arr[i]);
+//   }
+// }
+// let result1 = result.reduce((a, b) => a + b);
+// console.log(result1);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+// let arr1 = [1, 2, 3, 4, 5, 6, 7, 8];
+// function Same(arr, arr1) {
+//   if (arr.length !== arr1.length) {
+//     return false;
+//   }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!arr1.includes(arr[i])) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(Same(arr, arr1));
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [10, 11, 11, 11, 11, 22, 22, 22, 55, 55, 55, 66, 99, 77, 77];
+// let map = new Map();
+// for (let value of arr) {
+//   map.set(value, (map.get(value) || 0) + 1);
+// }
+// let maxKey, minKey;
+// let maxCount = -Infinity;
+// let minCount = Infinity;
+// for (let [key, count] of map) {
+//   if (count > maxCount) {
+//     maxCount = count;
+//     maxKey = key;
+//   }
+//   if (count < minCount) {
+//     minCount = count;
+//     minKey = key;
+//   }
+// }
+// console.log("Most repeated:", maxKey, "=>", maxCount);
+// console.log("Least repeated:", minKey, "=>", minCount);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [1, 2, 3, 3, 4];
+// let set = new Set(arr);
+// let arr1 = [...set];
+// for (let i = 0; i < arr1.length; i++) {
+//   if (arr1[i - 1] && arr1[i + 1]) {
+//     console.log(arr1[i]);
+//   }
+// }
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [5, 7, 4, 3, 2, 6, 1];
+// function moveToFront(num) {
+//   let move = arr.length;
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     if (arr[i] === move) {
+//       move--;
+//     }
+//   }
+//   return move;
+// }
+// console.log(moveToFront(arr));
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [7, 7, 7, 7, 7, 7, -1, -1, -1, 0, 0];
+// let count = 0;
+// let minus = 0;
+// let val = 20;
+// let zero = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] > 0) {
+//     count++;
+//   }
+//   if (arr[i] < 0) {
+//     minus++;
+//   }
+//   if (arr[i] == 0) {
+//     zero++;
+//   }
+// }
+// let divide = val / count;
+// let minuss = val / minus;
+// let zeros = val / zero;
+// console.log(divide);
+// console.log(minuss);
+// console.log(zeros);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [4, 7, 3, 6, 7];
+// let result = [...arr];
+// let current = [...arr];
+// while (current.length > 1) {
+//   let next = [];
+//   for (let i = 0; i < current.length - 1; i++) {
+//     next.push(current[i] + current[i + 1]);
+//   }
+//   result = [...next, ...result];
+//   current = next;
+// }
+// console.log(result);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [4, 5, 6, 7, 8, 9, 10];
+// function Multiply(arr, num) {
+//   if (num == arr.length) {
+//     return arr.reduce((a, b) => a * b);
+//   } else {
+//     return console.log("Wrong Input");
+//   }
+// }
+// Multiply(arr, 8);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [4, 8, 9, 10, 12];
+// let pairs = [];
+// for (let i = 0; i < arr.length - 1; i++) {
+//   pairs.push([arr[i], arr[i + 1]]);
+// }
+// let count = 0;
+// for (let [a, b] of pairs) {
+//   if (a % 2 == 0 && b % 2 == 0) {
+//     pairs[count].splice(1, 0, 1);
+//   }
+//   count++;
+// }
+// console.log(pairs);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
