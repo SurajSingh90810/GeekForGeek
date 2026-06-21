@@ -626,3 +626,218 @@
 // console.log(pairs);
 
 //-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [3, 6, 4, 8, 9];
+// let sum = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   sum += arr[i];
+// }
+// for (let i = 0; i < arr.length; i++) {
+//   arr[i] = sum - arr[i];
+// }
+// console.log(arr);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// arr1 = [11, 1, 8];
+// arr2 = [10, 11];
+
+// let result = [...arr1, ...arr2];
+// let set = new Set(result);
+// let array = Array(...set);
+// console.log(array);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [4, 4, 4, 9, 6, 8, 7, 7, 1, 1, 8, 9];
+// function Repeated(arr, a) {
+//   let map = new Map();
+//   let keys = [];
+//   for (let val of arr) {
+//     map.set(val, (map.get(val) || 0) + 1);
+//   }
+//   console.log(map);
+//   for (let [key, value] of map) {
+//     if (value == a) {
+//       keys.push(key);
+//     }
+//   }
+//   let pops = keys.pop();
+//   return pops;
+// }
+// console.log(Repeated(arr, 2));
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [4, 2, 7, 9];
+// let max = 0;
+// let result = [];
+// for (let i = 0; i < arr.length - 2; i++) {
+//   for (let j = i + 1; j < arr.length - 1; j++) {
+//     for (let k = j + 1; k < arr.length; k++) {
+//       console.log(arr[i], arr[j], arr[[k]]);
+//       let sum = arr[i] + arr[j] + arr[k];
+//       result.push(sum);
+//       if (sum > max) {
+//         max = sum;
+//       }
+//     }
+//   }
+// }
+// console.log(max);
+// console.log(result);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [1, 2, 3, 4, 5, 9, 10];
+// let k = 5;
+// let arr1 = arr
+//   .sort((a, b) => b - a)
+//   .slice(0, k)
+//   .reduce((a, b) => a * b);
+// console.log(arr1);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// function Operation(array, num) {
+//   let numbers = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] >= num) {
+//       numbers.push(array[i]);
+//     }
+//   }
+//   let hello = numbers.filter((val) => val - num < 5).length;
+//   return hello;
+// }
+// console.log(Operation([5, 3, 2, 6, 8, 30], 4));
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// function maxPerimeter(arr) {
+//   arr.sort((a, b) => b - a);
+//   for (let i = 0; i < arr.length - 2; i++) {
+//     let a = arr[i];
+//     let b = arr[i + 1];
+//     let c = arr[i + 2];
+//     if (b + c > a) {
+//       return a + b + c;
+//     }
+//   }
+//   return 0;
+// }
+// let arr = [6, 1, 6, 5, 8, 4];
+// console.log(maxPerimeter(arr));
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [1, 2, 3, 4, 5];
+// let maxSum = 0;
+// let first, second;
+// for (let i = 0; i < arr.length - 1; i++) {
+//     let sum = arr[i] + arr[i + 1];
+//     if (sum > maxSum) {
+//         maxSum = sum;
+//         first = arr[i];
+//         second = arr[i + 1];
+//     }
+// }
+// console.log("Maximum Sum:", maxSum);
+// console.log("Numbers:", first, second);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// let arr = [7, 9, 10, 8, 11, 2, 20, 1, 5];
+// let res = [];
+// for (let i = 0; i < arr.length - 2; i++) {
+//   if (arr[i] > arr[i + 1] && arr[i + 1] > arr[i + 2]) {
+//     res.push(arr[i], arr[i + 1], arr[i + 2]);
+//   } else {
+//     console.log(arr[i], arr[i + 1], arr[i + 2]);
+//   }
+// }
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// function isPerfect(arr) {
+//   let i = 0;
+//   let n = arr.length;
+//   while (i < n - 1 && arr[i] < arr[i + 1]) {
+//     i++;
+//   }
+//   if (i === 0) {
+//     return false;
+//   }
+//   while (i < n - 1 && arr[i] === arr[i + 1]) {
+//     i++;
+//   }
+//   while (i < n - 1 && arr[i] > arr[i + 1]) {
+//     i++;
+//   }
+//   return i === n - 1;
+// }
+// console.log(isPerfect([1, 8, 8, 8, 3, 2]));
+// console.log(isPerfect([1, 1, 2, 2, 1]));
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// function countElements(arr) {
+//   let count = 1;
+//   let max = arr[0];
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] > max) {
+//       count++;
+//       max = arr[i];
+//     }
+//   }
+//   return count;
+// }
+// console.log(countElements([10, 40, 23, 35, 50, 7])); // 3
+// console.log(countElements([5, 4, 1])); // 1
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// function minimumTime(arr1, arr2) {
+//   let n = arr1.length;
+//   let dp1 = arr1[0]; // Start with train 1
+//   let dp2 = arr2[0]; // Start with train 2
+//   for (let i = 1; i < n; i++) {
+//     let newDp1 = Math.min(
+//       dp1 + arr1[i], // Stay on train 1
+//       dp2 + 1 + arr1[i], // Switch from train 2
+//     );
+//     let newDp2 = Math.min(
+//       dp2 + arr2[i], // Stay on train 2
+//       dp1 + 1 + arr2[i], // Switch from train 1
+//     );
+//     dp1 = newDp1;
+//     dp2 = newDp2;
+//   }
+//   return Math.min(dp1, dp2);
+// }
+// console.log(minimumTime([2, 1, 2], [3, 2, 1])); // 5
+// console.log(minimumTime([1, 3, 1, 2], [2, 2, 3, 1])); // 5
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// function winner(arr, m, n) {
+//   let ram = 0;
+//   let rohan = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % m === 0) {
+//       ram++;
+//     } else if (arr[i] % n === 0) {
+//       rohan++;
+//     }
+//   }
+//   if (ram > rohan) {
+//     return "Ram";
+//   } else if (rohan > ram) {
+//     return "Rohan";
+//   } else {
+//     return "Tie";
+//   }
+// }
+// console.log(winner([4, 5, 7, 6, 9, 10, 14], 2, 3));
+// console.log(winner([1, 9, 9, 10, 9, 18], 5, 3));
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
